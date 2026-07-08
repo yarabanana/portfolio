@@ -18,23 +18,20 @@ export const hero = {
   description: { ua: "Спеціаліст із комунікацій та візуального контенту з 5-річним досвідом.", en: "Communications and visual content specialist with 5 years of experience." },
   primaryCta: { ua: "Моє резюме", en: "My CV" },
   secondaryCta: { ua: "Написати мені", en: "Contact me" },
-  photo: {
-    src: "/assets/images/placeholder.jpg",
-    alt: { ua: "Фото Ярослава", en: "Yaroslav's Photo" }
-  }
+  photo: { src: "/assets/images/placeholder.jpg", alt: { ua: "Фото Ярослава", en: "Yaroslav's Photo" } }
 };
 
 export const about = {
   heading: { ua: "Про мене", en: "About me" },
-  description: {
+  description: { 
     ua: [
       "Спеціаліст із комунікацій та візуального контенту з 5-річним досвідом. Поєдную стратегічне планування маркетингу, досвід управління командами (6+ осіб) та практичні навички в дизайні та репортажній фотографії.",
       "Маю успішні кейси реалізації грантових проєктів (УКФ) та брендингу міських територій. Знаю, як зробити складне простим, а нудне — візуально привабливим."
-    ],
+    ], 
     en: [
-      "Communications and visual content specialist with 5 years of experience. I combine strategic marketing planning, team management (6+ people), and practical skills in design and photography.",
-      "I have successful cases of implementing grant projects and city branding. I know how to make complex things simple and boring things visually appealing."
-    ]
+      "Communications and visual content specialist with 5 years of experience...",
+      "I have successful cases of implementing grant projects..."
+    ] 
   }
 };
 
@@ -46,14 +43,18 @@ export const experience = [
     role: { ua: "Начальник відділу інформаційно-презентаційного", en: "Head of Information & Presentation Department" },
     achievements: {
       ua: [
-        "Управління командою: Координую 6 фахівців (SMM, дизайн, фото/відео). Створюю та координую підготовку комунікаційних матеріалів: контент для соцмереж, афіші, презентації, інфографіку та звітні матеріали.",
-        "Art Direction & Branding: Розробив та впровадив з нуля єдиний візуальний стиль театру для Instagram та Facebook.",
-        "Грант-менеджмент: Реалізував 2 інклюзивні проєкти від УКФ для людей із порушеннями зору та слуху. Забезпечив повний цикл: від медіапланування та управління підрядниками до фінальної звітності.",
-        "Media Relations: Розвиваю партнерські комунікації з інфлюенсерами та інституційними партнерами."
+        { text: "Управління командою: Координую 6 фахівців (SMM, дизайн, фото/відео). Створюю та координую підготовку комунікаційних матеріалів: контент для соцмереж, афіші, презентації, інфографіку та звітні матеріали." },
+        { 
+          text: "Art Direction & Branding: Розробив та впровадив з нуля єдиний візуальний стиль театру для Instagram та Facebook.", 
+          link: { url: "https://www.instagram.com/shchepkintheatre/", label: "Перейти в Instagram театру ↗" } 
+        },
+        { 
+          text: "Грант-менеджмент: Реалізував 2 інклюзивні проєкти від УКФ для людей із порушеннями зору та слуху. Забезпечив повний цикл: від медіапланування та управління підрядниками до фінальної звітності.",
+          embed: { type: "instagram-reel", url: "https://www.instagram.com/reel/DOY_dfuCIII/" }
+        },
+        { text: "Media Relations: Розвиваю партнерські комунікації з інфлюенсерами та інституційними партнерами." }
       ]
-    },
-    hasMedia: true,
-    mediaNote: "Сюди будуть додані картинки, активні посилання на соцмережі та відео з УКФ."
+    }
   },
   {
     id: "sumy-council",
@@ -62,13 +63,11 @@ export const experience = [
     role: { ua: "Начальник відділу маркетингу, промоції і туризму", en: "Head of Marketing, Promotion and Tourism Department" },
     achievements: {
       ua: [
-        "Брендинг соцмереж: Розробив та впровадив візуальний стиль офіційних сторінок міськради.",
-        "Дизайн та урбаністика: Створив дизайн адресних покажчиків міста (офіційно затверджені громадою).",
-        "Project Management: Налагодив роботу туристичного бренду VisitSumy. Координував команду, контролював створення контент-планів та забезпечив дотримання єдиного стилю комунікації."
+        { text: "Брендинг соцмереж: Розробив та впровадив візуальний стиль офіційних сторінок міськради." },
+        { text: "Дизайн та урбаністика: Створив дизайн адресних покажчиків міста (офіційно затверджені громадою).", hasPhotos: true },
+        { text: "Project Management: Налагодив роботу туристичного бренду VisitSumy. Координував команду, контролював створення контент-планів та забезпечив дотримання єдиного стилю комунікації." }
       ]
-    },
-    hasMedia: true,
-    mediaNote: "Сюди будуть додані блоки з картинками адресних покажчиків та соцмереж."
+    }
   },
   {
     id: "automagistral",
@@ -77,14 +76,16 @@ export const experience = [
     role: { ua: "Ведучий YouTube-каналу", en: "YouTube Channel Host" },
     achievements: {
       ua: [
-        "Content Creation: Розробка сценаріїв, пошук інформаційних приводів та підготовка матеріалів для відеооглядів інфраструктурних проєктів компанії.",
-        "Video Production: Робота в кадрі як ведучий, проведення інтерв'ю з експертами, координація знімального процесу на локаціях.",
-        "Brand Awareness: Забезпечення комунікації з цільовою аудиторією через відеоформат, підвищення впізнаваності та лояльності до бренду роботодавця."
+        { 
+          text: "Public Communications: Представляв компанію як ведучий офіційного YouTube-каналу, розповідаючи про будівництво масштабних інфраструктурних проєктів України у форматі репортажів.",
+          embed: { type: "youtube", ids: ["BNKLmgkbUWM", "LR278QtfDac"] }
+        },
+        { 
+          text: "Visual Storytelling: Створював репортажний фото- та відеоконтент із будівельних майданчиків, пресконференцій, форумів і корпоративних подій.",
+          hasPhotos: true
+        }
       ]
-    },
-    hasMedia: true,
-    mediaType: "video",
-    videoIds: ["BNKLmgkbUWM", "LR278QtfDac"]
+    }
   }
 ];
 
@@ -127,9 +128,11 @@ export const skills = {
   technicalHeading: { ua: "Технічні інструменти", en: "Technical Tools" },
   technical: [
     { ua: "Adobe Photoshop", en: "Adobe Photoshop" },
-    { ua: "Adobe Illustrator", en: "Adobe Illustrator" },
+    { ua: "Adobe InDesign", en: "Adobe InDesign" },
     { ua: "Figma", en: "Figma" },
-    { ua: "Adobe Lightroom", en: "Adobe Lightroom" }
+    { ua: "Adobe Lightroom", en: "Adobe Lightroom" },
+    { ua: "Adobe Premiere Pro", en: "Adobe Premiere Pro" },
+    { ua: "DaVinci Resolve", en: "DaVinci Resolve" }
   ],
   languagesHeading: { ua: "Мови", en: "Languages" },
   languages: [
@@ -140,15 +143,14 @@ export const skills = {
 
 export const contacts = {
   heading: { ua: "Контакти", en: "Contacts" },
-  description: {
-    ua: "Відкритий до нових проєктів та співпраці. Зв'яжіться зі мною зручним для вас способом.",
-    en: "Open to new projects and cooperation. Feel free to contact me."
+  description: { 
+    ua: "Відкритий до нових проєктів та співпраці. Зв'яжіться зі мною зручним для вас способом.", 
+    en: "Open to new projects and cooperation. Feel free to contact me." 
   },
   email: "hello@example.com", 
-  phone: "+38 (000) 000-00-00", 
+  telegram: "https://t.me/yaroslav_isaiev", 
   socials: [
-    { name: "Instagram", url: "https://instagram.com/" }, 
-    { name: "Facebook", url: "https://facebook.com/" },   
-    { name: "LinkedIn", url: "https://linkedin.com/" }    
+    { name: "Facebook", url: "https://www.facebook.com/isaiev.yaroslav/" },
+    { name: "Instagram", url: "https://www.instagram.com/yaroslav.isaiev/" }
   ]
 };

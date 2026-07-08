@@ -1,5 +1,7 @@
+// src/app/layout.tsx
 import { Onest } from "next/font/google";
 import type { Metadata } from "next";
+import Script from "next/script"; // <-- ДОДАЛИ: спеціальний компонент для скриптів
 import "./globals.css";
 
 // Налаштовуємо шрифт Onest для української та англійської мов
@@ -25,6 +27,20 @@ export default function RootLayout({
     <html lang="uk" className={`${onest.variable} scroll-smooth`}>
       <body className="antialiased bg-white text-ink font-sans">
         {children}
+
+        {/* ДОДАЛИ: Google Analytics з твоїм ідентифікатором */}
+        <Script 
+          strategy="afterInteractive" 
+          src="https://www.googletagmanager.com/gtag/js?id=G-TN9J6FWHWW" 
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TN9J6FWHWW');
+          `}
+        </Script>
       </body>
     </html>
   );

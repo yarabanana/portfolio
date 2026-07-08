@@ -11,7 +11,8 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="order-2 md:order-1">
             
-            <h1 className="text-hero text-ink mb-6 mt-4">
+            {/* font-extrabold робить текст жирнішим */}
+            <h1 className="text-hero text-ink mb-6 mt-4 font-extrabold tracking-tight">
               {hero.heading.ua}
             </h1>
 
@@ -48,13 +49,14 @@ export default function Hero() {
           </div>
 
           <div className="order-1 md:order-2">
-            <div className="relative aspect-[4/5] w-full max-w-md mx-auto md:max-w-none rounded-card overflow-hidden bg-cloud">
+            {/* max-w-xs робить фотографію помітно меншою */}
+            <div className="relative aspect-[4/5] w-full max-w-xs mx-auto rounded-card overflow-hidden bg-cloud shadow-sm">
               <Image
                 src={hero.photo.src}
                 alt={hero.photo.alt.ua}
                 fill
                 priority
-                sizes="(max-width: 768px) 90vw, 45vw"
+                sizes="(max-width: 768px) 80vw, 30vw"
                 className="object-cover"
               />
             </div>
