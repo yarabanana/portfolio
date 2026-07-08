@@ -13,7 +13,6 @@ export default function Experience() {
           {experience.map((job) => (
             <div key={job.id} className="bg-white p-8 md:p-10 rounded-card shadow-sm border border-line">
               <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4 gap-2">
-                {/* font-bold робить посаду жирною */}
                 <h3 className="text-h3 font-bold text-ink">{job.role.ua}</h3>
                 <span className="text-caption font-medium text-mist whitespace-nowrap bg-cloud px-3 py-1 rounded-full">
                   {job.period.ua}
@@ -25,18 +24,17 @@ export default function Experience() {
               </div>
 
               <ul className="space-y-4 text-body text-graphite">
-                {job.achievements.ua.map((item, index) => (
+                {/* Додано тип : any для item та : number для index */}
+                {job.achievements.ua.map((item: any, index: number) => (
                   <li key={index} className="pl-6 relative before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-accent before:rounded-full">
                     {item.text}
                     
-                    {/* Елегантне посилання */}
                     {item.link && (
                       <a href={item.link.url} target="_blank" rel="noreferrer" className="block mt-2 text-accent hover:text-ink font-medium underline underline-offset-4 decoration-accent/30 transition-colors">
                         {item.link.label}
                       </a>
                     )}
 
-                    {/* Відео */}
                     {item.embed && item.embed.type === "youtube" && (
                       <div className="mt-4 p-4 bg-cloud rounded-lg text-sm text-mist border border-line">
                         [ Тут будуть вбудовані YouTube відео: {item.embed.ids?.join(', ')} ]
@@ -52,7 +50,6 @@ export default function Experience() {
                       </div>
                     )}
 
-                    {/* Блоки для фотографій */}
                     {item.hasPhotos && (
                       <div className="mt-4 p-8 bg-cloud rounded-lg text-sm text-mist border border-dashed border-line flex items-center justify-center">
                         [ Тут буде блок із фотографіями ]
