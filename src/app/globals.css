@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Кольори */
+  --color-ink: #1A1A1A;
+  --color-graphite: #5C5C5C;
+  --color-mist: #8A8A87;
+  --color-cloud: #F2F1EE;
+  --color-line: #E3E1DC;
+
+  --color-accent: #3D5A50;
+  --color-accent-dark: #2C4239;
+  --color-accent-light: #EDF1EF;
+
+  /* Шрифт */
+  --font-sans: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+
+  /* Радіуси */
+  --radius-card: 1rem;
+  --radius-button: 0.625rem;
+
+  /* Максимальна ширина контенту */
+  --container-content: 1200px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-white text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent-light text-accent-dark;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Стилі для друку (кнопка "Завантажити CV" → друк сторінки) */
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  section {
+    break-inside: avoid;
+  }
 }
