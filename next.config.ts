@@ -5,7 +5,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/portfolio", // Це важливо для твого шляху yarabanana.github.io/portfolio/
   trailingSlash: true,
 };
 
