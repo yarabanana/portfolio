@@ -2,7 +2,7 @@
 
 export const siteConfig = {
   logoName: { ua: "Ярослав Ісаєв", en: "Yaroslav Isaiev" },
-  cvPath: "/assets/cv-yaroslav.pdf"
+  cvPath: "/assets/cv-yaroslav-isaiev.pdf"
 };
 
 export const navItems = [
@@ -18,7 +18,7 @@ export const hero = {
   description: { ua: "Спеціаліст із комунікацій та візуального контенту з 5-річним досвідом.", en: "Communications and visual content specialist with 5 years of experience." },
   primaryCta: { ua: "Моє резюме", en: "My CV" },
   secondaryCta: { ua: "Написати мені", en: "Contact me" },
-  photo: { src: "/assets/images/placeholder.jpg", alt: { ua: "Фото Ярослава", en: "Yaroslav's Photo" } }
+  photo: { src: "/assets/images/yaroslav-photo.jpg", alt: { ua: "Фото Ярослава", en: "Yaroslav's Photo" } }
 };
 
 export const about = {
@@ -153,7 +153,7 @@ export const contacts = {
     ua: "Відкритий до нових проєктів та співпраці. Зв'яжіться зі мною зручним для вас способом.", 
     en: "Open to new projects and cooperation. Feel free to contact me." 
   },
-  email: "hello@example.com", 
+  email: "yaroslav.isaiev@icloud.com", 
   telegram: "https://t.me/yaroslav_isaiev", 
   socials: [
     { name: "Facebook", url: "https://www.facebook.com/isaiev.yaroslav/" },
