@@ -1,31 +1,29 @@
+// src/components/sections/About.tsx
 "use client";
 
 import { about } from "@/data/content";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-cloud/30">
+    // Додали border-y (це border-top та border-bottom одночасно) та border-line
+    <section id="about" className="py-24 bg-white border-y border-line">
       <div className="max-w-content mx-auto px-6 lg:px-10">
-        <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           
-          {/* Заголовок секції */}
           <div className="md:col-span-4 lg:col-span-3">
-            <h2 className="text-section-title text-ink font-semibold sticky top-28">
+            <h2 className="text-h2 font-bold text-ink mb-6">
               {about.heading.ua}
             </h2>
           </div>
 
-          {/* Контент секції */}
-          <div className="md:col-span-8 lg:col-span-9 flex flex-col gap-6">
-            <div className="text-body text-graphite leading-relaxed">
+          <div className="md:col-span-8 lg:col-span-9">
+            <div className="space-y-6 text-body text-graphite leading-relaxed">
               {about.description.ua.map((paragraph, index) => (
-                <p key={index} className="mb-4 last:mb-0">
-                  {paragraph}
-                </p>
+                <p key={index}>{paragraph}</p>
               ))}
             </div>
           </div>
-          
+
         </div>
       </div>
     </section>

@@ -5,7 +5,6 @@ import { contacts } from "@/data/content";
 
 export default function Contacts() {
   return (
-    // Замінили bg-white на bg-gray-50 та додали лінію зверху
     <section id="contacts" className="py-24 bg-gray-50 border-t border-line">
       <div className="max-w-content mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
@@ -30,7 +29,8 @@ export default function Contacts() {
               Написати в Telegram
             </a>
 
-            <div className="flex flex-col sm:flex-row gap-6 mt-8 pt-8 border-t border-line w-full max-w-xl">
+            {/* Ось тут ми прибрали border-t, border-line та pt-8 */}
+            <div className="flex flex-col sm:flex-row gap-6 mt-8 w-full max-w-xl">
               <a
                 href={`mailto:${contacts.email}`}
                 className="text-body font-medium text-graphite hover:text-ink transition-colors"
