@@ -36,6 +36,8 @@ export const about = {
 };
 
 export const experience = [
+// Знайди в src/data/content.ts масив experience і онови ці два об'єкти:
+
   {
     id: "shchepkin",
     period: { ua: "09.2023 - дотепер", en: "09.2023 - Present" },
@@ -49,7 +51,7 @@ export const experience = [
           link: { url: "https://www.instagram.com/shchepkintheatre/", label: "Перейти в Instagram театру ↗" } 
         },
         { 
-          text: "Грант-менеджмент: Реалізував 2 інклюзивні проєкти від УКФ для людей із порушеннями зору та слуху. Забезпечив повний цикл: від медіапланування та управління підрядниками до фінальної звітності.",
+          text: "Грант-менеджмент: Реалізував 2 інклюзивні проєкти від УКФ для людей із порушеннями зору та слуху. Забезпечив повноцінний цикл: від медіапланування та управління підрядниками до фінальної звітності.",
           embed: { type: "instagram-reel", url: "https://www.instagram.com/reel/DOY_dfuCIII/" }
         },
         { text: "Media Relations: Розвиваю партнерські комунікації з інфлюенсерами та інституційними партнерами." }
@@ -63,30 +65,18 @@ export const experience = [
     role: { ua: "Начальник відділу маркетингу, промоції і туризму", en: "Head of Marketing, Promotion and Tourism Department" },
     achievements: {
       ua: [
-        { text: "Брендинг соцмереж: Розробив та впровадив візуальний стиль офіційних сторінок міськради." },
-        { text: "Дизайн та урбаністика: Створив дизайн адресних покажчиків міста (офіційно затверджені громадою).", hasPhotos: true },
+        { 
+          text: "Брендинг соцмереж: Розробив та впровадив візуальний стиль офіційних сторінок міськради.",
+          link: { url: "https://www.facebook.com/smr.gov.ua?locale=uk_UA", label: "Дивитися Facebook міськради ↗" }
+        },
+        { 
+          text: "Дизайн та урбаністика: Створив дизайн адресних покажчиків міста (офіційно затверджені громадою).",
+          link: { url: "https://smr.gov.ua/uk/misto/brend-mista-sumy/27729-tekhnichni-vimogi-do-dizajnu-vulichnikh-pokazhchikiv.html", label: "Технічні вимоги до покажчиків ↗" }
+        },
         { text: "Project Management: Налагодив роботу туристичного бренду VisitSumy. Координував команду, контролював створення контент-планів та забезпечив дотримання єдиного стилю комунікації." }
       ]
     }
   },
-  {
-    id: "automagistral",
-    period: { ua: "05.2021 - 08.2022", en: "05.2021 - 08.2022" },
-    company: { ua: "АВТОМАГІСТРАЛЬ-ПІВДЕНЬ", en: "AUTOMAGISTRAL-PIVDEN" },
-    role: { ua: "Ведучий YouTube-каналу", en: "YouTube Channel Host" },
-    achievements: {
-      ua: [
-        { 
-          text: "Public Communications: Представляв компанію як ведучий офіційного YouTube-каналу, розповідаючи про будівництво масштабних інфраструктурних проєктів України у форматі репортажів.",
-          embed: { type: "youtube", ids: ["BNKLmgkbUWM", "LR278QtfDac"] }
-        },
-        { 
-          text: "Visual Storytelling: Створював репортажний фото- та відеоконтент із будівельних майданчиків, пресконференцій, форумів і корпоративних подій.",
-          hasPhotos: true
-        }
-      ]
-    }
-  }
 ];
 
 export const education = [
