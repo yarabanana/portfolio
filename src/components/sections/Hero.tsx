@@ -2,7 +2,8 @@
 "use client";
 
 import Image from "next/image";
-import { hero } from "@/data/content";
+// Додали siteConfig, щоб брати правильне посилання на резюме
+import { hero, siteConfig } from "@/data/content";
 
 export default function Hero() {
   return (
@@ -11,7 +12,6 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="order-2 md:order-1">
             
-            {/* font-extrabold робить текст жирнішим */}
             <h1 className="text-hero text-ink mb-6 mt-4 font-extrabold tracking-tight">
               {hero.heading.ua}
             </h1>
@@ -21,12 +21,14 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
+              {/* Оновлена кнопка завантаження резюме */}
               <a
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
                   const link = document.createElement("a");
-                  link.href = "/assets/cv-yaroslav.pdf";
+                  // Беремо правильний шлях до PDF із файлу налаштувань
+                  link.href = siteConfig.cvPath;
                   link.download = "";
                   link.click();
                 }}
@@ -49,7 +51,6 @@ export default function Hero() {
           </div>
 
           <div className="order-1 md:order-2">
-            {/* max-w-xs робить фотографію помітно меншою */}
             <div className="relative aspect-[4/5] w-full max-w-xs mx-auto rounded-card overflow-hidden bg-cloud shadow-sm">
               <Image
                 src={hero.photo.src}
