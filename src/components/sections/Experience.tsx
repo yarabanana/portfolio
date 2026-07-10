@@ -15,7 +15,6 @@ export default function Experience() {
           {experience.map((job, index) => (
             <div key={job.id}>
               
-              {/* Основний блок із місцем роботи */}
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
                 
                 {/* Ліва колонка: Дати та Компанія */}
@@ -28,7 +27,7 @@ export default function Experience() {
                   </h3>
                 </div>
 
-                {/* Права колонка: Посада, Опис, Посилання та Відео */}
+                {/* Права колонка */}
                 <div className="md:col-span-8 lg:col-span-9">
                   <h4 className="text-xl font-bold text-ink mb-6">
                     {job.role.ua}
@@ -52,11 +51,18 @@ export default function Experience() {
                             )}
                           </p>
 
-                          {/* Елегантне посилання */}
+                          {/* Кнопка-посилання (тепер однаковий дизайн для всього) */}
                           {item.link && (
-                            <a href={item.link.url} target="_blank" rel="noreferrer" className="inline-block mt-2 text-accent hover:text-ink font-medium underline underline-offset-4 transition-colors">
-                              {item.link.label}
-                            </a>
+                            <div className="mt-3">
+                              <a 
+                                href={item.link.url} 
+                                target="_blank" 
+                                rel="noreferrer" 
+                                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-line rounded-button text-ink text-sm font-medium hover:bg-cloud transition-colors shadow-sm"
+                              >
+                                {item.link.label}
+                              </a>
+                            </div>
                           )}
 
                           {/* YouTube Відео */}
@@ -81,7 +87,12 @@ export default function Experience() {
                           {/* Кнопка на Instagram Reel */}
                           {item.embed && item.embed.type === "instagram-reel" && (
                             <div className="mt-4">
-                              <a href={item.embed.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-line rounded-button text-ink font-medium hover:bg-cloud transition-colors shadow-sm">
+                              <a 
+                                href={item.embed.url} 
+                                target="_blank" 
+                                rel="noreferrer" 
+                                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-line rounded-button text-ink text-sm font-medium hover:bg-cloud transition-colors shadow-sm"
+                              >
                                 Дивитися Reel ↗
                               </a>
                             </div>
@@ -93,7 +104,6 @@ export default function Experience() {
                 </div>
               </div>
 
-              {/* Тонка розділяюча лінія, яка малюється для всіх блоків, крім останнього */}
               {index !== experience.length - 1 && (
                 <hr className="border-t border-line w-full my-16" />
               )}
