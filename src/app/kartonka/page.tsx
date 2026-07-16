@@ -1,5 +1,12 @@
 // src/app/kartonka/page.tsx
+import { Metadata } from "next";
 import Image from "next/image";
+
+// НАЛАШТУВАННЯ ВКЛАДКИ БРАУЗЕРА
+// Цей об'єкт каже Next.js змінити назву вкладки саме для сторінки /kartonka
+export const metadata: Metadata = {
+  title: "Картонки",
+};
 
 // ТВОЯ БАЗА КАРТИНОК
 const kartonkas = [
@@ -32,7 +39,7 @@ export default function KartonkaPage() {
           {kartonkas.map((item) => (
             <div key={item.id} className="bg-white p-8 rounded-card border border-line shadow-sm flex flex-col items-center">
               
-              {/* ОНОВЛЕНИЙ БЛОК: зробили чистий bg-white та прибрали рамку */}
+              {/* Блок з картинкою-прев'ю */}
               <div className="relative w-64 h-64 mb-8 bg-white rounded-lg overflow-hidden flex items-center justify-center">
                 <Image 
                   src={`/assets/images/${item.preview}`}
