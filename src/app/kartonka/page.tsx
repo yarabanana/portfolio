@@ -2,10 +2,23 @@
 import Image from "next/image";
 
 // ТВОЯ БАЗА КАРТИНОК
+// Для кожної картки ми чітко розділяємо легке прев'ю та важкий оригінал
 const kartonkas = [
-  { id: 1, filename: "kartonka-1.png" },
-  { id: 2, filename: "kartonka-2.png" },
-  { id: 3, filename: "kartonka-3.png" },
+  { 
+    id: 1, 
+    preview: "kartonka-1-preview.jpg", // легка картинка для швидкого завантаження сайту
+    downloadFile: "kartonka-1.png"     // оригінальний PNG на прозорому фоні
+  },
+  { 
+    id: 2, 
+    preview: "kartonka-2-preview.jpg", 
+    downloadFile: "kartonka-2.png" 
+  },
+  { 
+    id: 3, 
+    preview: "kartonka-3-preview.jpg", 
+    downloadFile: "kartonka-3.png" 
+  },
 ];
 
 export default function KartonkaPage() {
@@ -17,24 +30,25 @@ export default function KartonkaPage() {
         
         <div className="flex flex-wrap justify-center gap-8">
           
-          {/* Програма виводить усі картинки з бази */}
           {kartonkas.map((item) => (
             <div key={item.id} className="bg-white p-8 rounded-card border border-line shadow-sm flex flex-col items-center">
               
-              {/* Блок з картинкою */}
+              {/* Блок з картинкою-прев'ю (візуальна частина) */}
               <div className="relative w-64 h-64 mb-8 bg-cloud rounded-lg overflow-hidden flex items-center justify-center border border-dashed border-line">
                 <Image 
-                  src={`/assets/images/${item.filename}`}
+                  src={`/assets/images/${item.preview}`} // Відображаємо надлегкий JPEG або WebP
                   alt={`Протестний плакат ${item.id}`}
                   fill 
+                  priority // Пріоритет завантаження прев'ю для миттєвого відображення
+                  sizes="256px"
                   className="object-contain p-4"
                 />
               </div>
               
-              {/* Кнопка завантаження */}
+              {/* Кнопка завантаження оригіналу */}
               <a 
-                href={`/assets/images/${item.filename}`}
-                download={item.filename}
+                href={`/assets/images/${item.downloadFile}`} // Посилання веде на оригінальний PNG
+                download={item.downloadFile} // Файл збережеться під своїм оригінальним ім'я kantonka-X.png
                 className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-white text-sm font-medium rounded-button hover:bg-graphite transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,7 +62,7 @@ export default function KartonkaPage() {
         </div>
       </div>
 
-      {/* Оновлений супер-мінімалістичний футер */}
+      {/* Супер-мінімалістичний футер */}
       <footer className="w-full py-6 mt-auto">
         <div className="text-center text-xs text-gray-400">
           <a href="/" className="hover:text-gray-600 transition-colors inline-block">
