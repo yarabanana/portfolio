@@ -2,7 +2,6 @@
 import Image from "next/image";
 
 // ТВОЯ БАЗА КАРТИНОК
-// Тепер тут активовано три картинки
 const kartonkas = [
   { id: 1, filename: "kartonka-1.png" },
   { id: 2, filename: "kartonka-2.png" },
@@ -18,10 +17,11 @@ export default function KartonkaPage() {
         
         <div className="flex flex-wrap justify-center gap-8">
           
-          {/* Програма пройдеться по всім трьом картинкам і виведе їх на екран */}
+          {/* Програма виводить усі картинки з бази */}
           {kartonkas.map((item) => (
             <div key={item.id} className="bg-white p-8 rounded-card border border-line shadow-sm flex flex-col items-center">
               
+              {/* Блок з картинкою */}
               <div className="relative w-64 h-64 mb-8 bg-cloud rounded-lg overflow-hidden flex items-center justify-center border border-dashed border-line">
                 <Image 
                   src={`/assets/images/${item.filename}`}
@@ -31,12 +31,15 @@ export default function KartonkaPage() {
                 />
               </div>
               
+              {/* Кнопка завантаження. Тепер завантажує файл під його оригінальною назвою */}
               <a 
                 href={`/assets/images/${item.filename}`}
-                download={`kartonka-protest-${item.id}.png`}
+                download={item.filename}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-white text-sm font-medium rounded-button hover:bg-graphite transition-colors"
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
                 Завантажити PNG
               </a>
             </div>
@@ -45,12 +48,11 @@ export default function KartonkaPage() {
         </div>
       </div>
 
-      {/* Футер */}
+      {/* Оновлений футер: текст є активним посиланням на головну сторінку */}
       <footer className="w-full py-8 border-t border-line bg-white mt-auto">
         <div className="text-center text-sm font-medium text-mist">
-          <p>Ярослав Ісаєв — спеціаліст із комунікацій.</p>
-          <a href="/" className="hover:text-ink transition-colors underline underline-offset-4 mt-2 inline-block">
-            isaiev.pro
+          <a href="/" className="hover:text-ink transition-colors underline underline-offset-4 inline-block">
+            Ярослав Ісаєв - комунікаційник
           </a>
         </div>
       </footer>
