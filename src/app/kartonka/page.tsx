@@ -31,7 +31,7 @@ export default function KartonkaPage() {
                 />
               </div>
               
-              {/* Кнопка завантаження. Тепер завантажує файл під його оригінальною назвою */}
+              {/* Кнопка завантаження */}
               <a 
                 href={`/assets/images/${item.filename}`}
                 download={item.filename}
@@ -48,10 +48,10 @@ export default function KartonkaPage() {
         </div>
       </div>
 
-      {/* Оновлений футер: текст є активним посиланням на головну сторінку */}
-      <footer className="w-full py-8 border-t border-line bg-white mt-auto">
-        <div className="text-center text-sm font-medium text-mist">
-          <a href="/" className="hover:text-ink transition-colors underline underline-offset-4 inline-block">
+      {/* Оновлений супер-мінімалістичний футер */}
+      <footer className="w-full py-6 mt-auto">
+        <div className="text-center text-xs text-gray-400">
+          <a href="/" className="hover:text-gray-600 transition-colors inline-block">
             Ярослав Ісаєв - комунікаційник
           </a>
         </div>
