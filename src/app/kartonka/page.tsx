@@ -2,12 +2,11 @@
 import Image from "next/image";
 
 // ТВОЯ БАЗА КАРТИНОК
-// Для кожної картки ми чітко розділяємо легке прев'ю та важкий оригінал
 const kartonkas = [
   { 
     id: 1, 
-    preview: "kartonka-1-preview.jpg", // легка картинка для швидкого завантаження сайту
-    downloadFile: "kartonka-1.png"     // оригінальний PNG на прозорому фоні
+    preview: "kartonka-1-preview.jpg", 
+    downloadFile: "kartonka-1.png" 
   },
   { 
     id: 2, 
@@ -33,13 +32,13 @@ export default function KartonkaPage() {
           {kartonkas.map((item) => (
             <div key={item.id} className="bg-white p-8 rounded-card border border-line shadow-sm flex flex-col items-center">
               
-              {/* Блок з картинкою-прев'ю (візуальна частина) */}
-              <div className="relative w-64 h-64 mb-8 bg-cloud rounded-lg overflow-hidden flex items-center justify-center border border-dashed border-line">
+              {/* ОНОВЛЕНИЙ БЛОК: зробили чистий bg-white та прибрали рамку */}
+              <div className="relative w-64 h-64 mb-8 bg-white rounded-lg overflow-hidden flex items-center justify-center">
                 <Image 
-                  src={`/assets/images/${item.preview}`} // Відображаємо надлегкий JPEG або WebP
+                  src={`/assets/images/${item.preview}`}
                   alt={`Протестний плакат ${item.id}`}
                   fill 
-                  priority // Пріоритет завантаження прев'ю для миттєвого відображення
+                  priority 
                   sizes="256px"
                   className="object-contain p-4"
                 />
@@ -47,8 +46,8 @@ export default function KartonkaPage() {
               
               {/* Кнопка завантаження оригіналу */}
               <a 
-                href={`/assets/images/${item.downloadFile}`} // Посилання веде на оригінальний PNG
-                download={item.downloadFile} // Файл збережеться під своїм оригінальним ім'я kantonka-X.png
+                href={`/assets/images/${item.downloadFile}`}
+                download={item.downloadFile}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-white text-sm font-medium rounded-button hover:bg-graphite transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
