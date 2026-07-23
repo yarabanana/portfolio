@@ -45,11 +45,11 @@ export const experience = [
       ua: [
         { text: "Управління командою: Координую 6 фахівців (SMM, дизайн, фото/відео). Створюю та координую підготовку комунікаційних матеріалів: контент для соцмереж, афіші, презентації, інфографіку та звітні матеріали." },
         { 
-          text: "Art Direction & Branding: Розробив та впровадив з нуля єдиний візуальний стиль театру для Instagram та Facebook.", 
+          text: "Art Direction & Branding: Розробив та впровадив єдиний візуальний стиль театру для офіційних комунікаційних каналів Instagram, Facebook.", 
           link: { url: "https://www.instagram.com/shchepkintheatre/", label: "Перейти в Instagram театру ↗" } 
         },
         { 
-          text: "Грант-менеджмент: Реалізував 2 інклюзивні проєкти від УКФ для людей із порушеннями зору та слуху. Забезпечив повний цикл: від медіапланування та управління підрядниками до фінальної звітності.",
+          text: "Грант-менеджмент: Реалізував 2 інклюзивні проєкти від УКФ для людей із порушеннями зору та слуху. Забезпечив медіапланування, роботу з підрядниками, закупівлі та підготовку фінальної звітності.",
           embed: { type: "instagram-reel", url: "https://www.instagram.com/reel/DOY_dfuCIII/" }
         },
         { text: "Media Relations: Розвиваю партнерські комунікації з інфлюенсерами та інституційними партнерами." }
@@ -64,14 +64,14 @@ export const experience = [
     achievements: {
       ua: [
         { 
-          text: "Брендинг соцмереж: Розробив та впровадив візуальний стиль офіційних сторінок міськради.",
+          text: "Брендинг соцмереж: Розробив та впровадив оновлений візуальний стиль для офіційних сторінок міської ради у соціальних мережах.",
           link: { url: "https://www.facebook.com/smr.gov.ua?locale=uk_UA", label: "Дивитися Facebook міськради ↗" }
         },
         { 
-          text: "Дизайн та урбаністика: Створив дизайн адресних покажчиків міста (офіційно затверджені громадою).",
+          text: "Дизайн та урбаністика: Створив та успішно імплементував дизайн адресних покажчиків міста, які були офіційно затверджені громадою.",
           link: { url: "https://smr.gov.ua/uk/misto/brend-mista-sumy/27729-tekhnichni-vimogi-do-dizajnu-vulichnikh-pokazhchikiv.html", label: "Технічні вимоги до покажчиків ↗" }
         },
-        { text: "Project Management: Налагодив роботу туристичного бренду VisitSumy. Координував команду, контролював створення контент-планів та забезпечив дотримання єдиного стилю комунікації." }
+        { text: "Project Management: Керував розвитком туристичного бренду VisitSumy: координував команду, розробив комунікаційну стратегію, контролював контент-плани та забезпечив єдиний tone of voice." }
       ]
     }
   },
@@ -87,35 +87,11 @@ export const experience = [
           embed: { type: "youtube", ids: ["BNKLmgkbUWM", "LR278QtfDac"] }
         },
         { 
-          text: "Visual Storytelling: Створював репортажний фото- та відеоконтент із будівельних майданчиків, пресконференцій, форумів і корпоративних подій.",
+          text: "Visual Storytelling: Забезпечував репортажний фото- та відеосупровід із будівельних майданчиків, пресконференцій, форумів і корпоративних подій.",
           hasPhotos: true
         }
       ]
     }
-  }
-];
-
-export const education = [
-  {
-    id: "snau",
-    period: { ua: "2023 - 2024", en: "2023 - 2024" },
-    degree: { ua: "Магістр", en: "Master's Degree" },
-    major: { ua: "Маркетинг", en: "Marketing" },
-    university: { ua: "Сумський національний аграрний університет", en: "Sumy National Agrarian University" }
-  },
-  {
-    id: "khneu-media",
-    period: { ua: "2021 - 2022", en: "2021 - 2022" },
-    degree: { ua: "Магістр", en: "Master's Degree" },
-    major: { ua: "Медіакомунікації", en: "Media Communications" },
-    university: { ua: "Харківський національний економічний університет ім. С. Кузнеця", en: "Kharkiv National University of Economics" }
-  },
-  {
-    id: "khneu-pr",
-    period: { ua: "2017 - 2021", en: "2017 - 2021" },
-    degree: { ua: "Бакалавр", en: "Bachelor's Degree" },
-    major: { ua: "Реклама та PR", en: "Advertising and PR" },
-    university: { ua: "Харківський національний економічний університет ім. С. Кузнеця", en: "Kharkiv National University of Economics" }
   }
 ];
 
@@ -132,13 +108,16 @@ export const skills = {
     { ua: "Керування командою", en: "Team Management" }
   ],
   technicalHeading: { ua: "Технічні інструменти", en: "Technical Tools" },
+  // ДОДАНО НОВІ ІНСТРУМЕНТИ: OBS та Resolume Arena
   technical: [
     { ua: "Adobe Photoshop", en: "Adobe Photoshop" },
     { ua: "Adobe InDesign", en: "Adobe InDesign" },
     { ua: "Figma", en: "Figma" },
     { ua: "Adobe Lightroom", en: "Adobe Lightroom" },
     { ua: "Adobe Premiere Pro", en: "Adobe Premiere Pro" },
-    { ua: "DaVinci Resolve", en: "DaVinci Resolve" }
+    { ua: "DaVinci Resolve", en: "DaVinci Resolve" },
+    { ua: "OBS", en: "OBS" },
+    { ua: "Resolume Arena", en: "Resolume Arena" }
   ],
   languagesHeading: { ua: "Мови", en: "Languages" },
   languages: [
@@ -153,7 +132,7 @@ export const contacts = {
     ua: "Відкритий до нових проєктів та співпраці. Зв'яжіться зі мною зручним для вас способом.", 
     en: "Open to new projects and cooperation. Feel free to contact me." 
   },
-  email: "yaroslav.isaiev@icloud.com", 
+  email: "hello@example.com", 
   telegram: "https://t.me/yaroslav_isaiev", 
   socials: [
     { name: "Facebook", url: "https://www.facebook.com/isaiev.yaroslav/" },
