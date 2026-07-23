@@ -5,7 +5,8 @@ import { experience } from "@/data/content";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-gray-50 border-y border-line">
+    // Змінено border-y на border-t border-line для ідеальної верхньої лінії
+    <section id="experience" className="py-24 bg-gray-50 border-t border-line">
       <div className="max-w-content mx-auto px-6 lg:px-10">
         <h2 className="text-h2 font-bold text-ink mb-16 border-b border-line pb-4">
           Досвід роботи

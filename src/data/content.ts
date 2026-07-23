@@ -155,7 +155,7 @@ export const contacts = {
     ua: "Відкритий до нових проєктів та співпраці. Зв'яжіться зі мною зручним для вас способом.", 
     en: "Open to new projects and cooperation. Feel free to contact me." 
   },
-  email: "hello@example.com", 
+  email: "yaroslav.isaiev@icloud.com", 
   telegram: "https://t.me/yaroslav_isaiev", 
   socials: [
     { name: "Facebook", url: "https://www.facebook.com/isaiev.yaroslav/" },
