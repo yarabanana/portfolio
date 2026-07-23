@@ -95,6 +95,30 @@ export const experience = [
   }
 ];
 
+export const education = [
+  {
+    id: "snau",
+    period: { ua: "2023 - 2024", en: "2023 - 2024" },
+    degree: { ua: "Магістр", en: "Master's Degree" },
+    major: { ua: "Маркетинг", en: "Marketing" },
+    university: { ua: "Сумський національний аграрний університет", en: "Sumy National Agrarian University" }
+  },
+  {
+    id: "khneu-media",
+    period: { ua: "2021 - 2022", en: "2021 - 2022" },
+    degree: { ua: "Магістр", en: "Master's Degree" },
+    major: { ua: "Медіакомунікації", en: "Media Communications" },
+    university: { ua: "Харківський національний економічний університет ім. С. Кузнеця", en: "Kharkiv National University of Economics" }
+  },
+  {
+    id: "khneu-pr",
+    period: { ua: "2017 - 2021", en: "2017 - 2021" },
+    degree: { ua: "Бакалавр", en: "Bachelor's Degree" },
+    major: { ua: "Реклама та PR", en: "Advertising and PR" },
+    university: { ua: "Харківський національний економічний університет ім. С. Кузнеця", en: "Kharkiv National University of Economics" }
+  }
+];
+
 export const skills = {
   professionalHeading: { ua: "Професійні навички", en: "Professional Skills" },
   professional: [
@@ -108,7 +132,6 @@ export const skills = {
     { ua: "Керування командою", en: "Team Management" }
   ],
   technicalHeading: { ua: "Технічні інструменти", en: "Technical Tools" },
-  // ДОДАНО НОВІ ІНСТРУМЕНТИ: OBS та Resolume Arena
   technical: [
     { ua: "Adobe Photoshop", en: "Adobe Photoshop" },
     { ua: "Adobe InDesign", en: "Adobe InDesign" },
