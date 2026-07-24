@@ -5,10 +5,12 @@ import { experience } from "@/data/content";
 
 export default function Experience() {
   return (
-    // Змінено border-y на border-t border-line для ідеальної верхньої лінії
-    <section id="experience" className="py-24 bg-gray-50 border-t border-line">
+    // Змінили border-y на border-b. Тепер верхня лінія буде тонкою (від попереднього блоку), а нижня з'явиться над Освітою.
+    <section id="experience" className="py-24 bg-gray-50 border-b border-line">
       <div className="max-w-content mx-auto px-6 lg:px-10">
-        <h2 className="text-h2 font-bold text-ink mb-16 border-b border-line pb-4">
+        
+        {/* Прибрали зайвий border-b під самим словом "Досвід роботи", щоб було як у "Про мене" */}
+        <h2 className="text-h2 font-bold text-ink mb-12">
           Досвід роботи
         </h2>
 
@@ -52,7 +54,7 @@ export default function Experience() {
                             )}
                           </p>
 
-                          {/* Кнопка-посилання (тепер однаковий дизайн для всього) */}
+                          {/* Кнопка-посилання */}
                           {item.link && (
                             <div className="mt-3">
                               <a 
@@ -105,6 +107,7 @@ export default function Experience() {
                 </div>
               </div>
 
+              {/* Лінія між самими роботами (Щепкіна, міськрада тощо) */}
               {index !== experience.length - 1 && (
                 <hr className="border-t border-line w-full my-16" />
               )}
