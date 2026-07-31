@@ -1,10 +1,18 @@
 // src/app/design/page.tsx
 import Link from "next/link";
 import { Metadata } from "next";
+import Gallery from "@/components/ui/Gallery";
 
 export const metadata: Metadata = {
-  title: "Дизайн-портфоліо | Ярослав Ісаєв",
+  title: "Дизайн-портфоліо",
 };
+
+// Твоя база дизайн-проєктів
+const designProjects = [
+  { id: 1, src: "https://images.unsplash.com/photo-1626785776929-b76e1f0e5318?q=80&w=1000", alt: "Дизайн 1" },
+  { id: 2, src: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000", alt: "Дизайн 2" },
+  { id: 3, src: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000", alt: "Дизайн 3" },
+];
 
 export default function DesignPortfolioPage() {
   return (
@@ -21,23 +29,13 @@ export default function DesignPortfolioPage() {
         {/* Заголовок */}
         <h1 className="text-h2 font-bold text-ink mb-12">Дизайн та Поліграфія</h1>
 
-        {/* Тут згодом буде сітка з твоїми макетами (Figma, InDesign тощо) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="aspect-square bg-cloud rounded-card border border-dashed border-line flex items-center justify-center text-mist text-sm">
-            Місце для проєкту 1
-          </div>
-          <div className="aspect-square bg-cloud rounded-card border border-dashed border-line flex items-center justify-center text-mist text-sm">
-            Місце для проєкту 2
-          </div>
-          <div className="aspect-square bg-cloud rounded-card border border-dashed border-line flex items-center justify-center text-mist text-sm">
-            Місце для проєкту 3
-          </div>
-        </div>
+        {/* Викликаємо галерею. aspect-square зробить прев'ю квадратними */}
+        <Gallery items={designProjects} aspectClass="aspect-square" />
 
       </div>
 
       {/* Футер */}
-      <footer className="w-full py-6 mt-auto border-t border-line">
+      <footer className="w-full py-6 mt-auto border-t border-line bg-white">
         <div className="text-center text-xs text-gray-400">
           <Link href="/" className="hover:text-gray-600 transition-colors inline-block">
             Ярослав Ісаєв - комунікаційник

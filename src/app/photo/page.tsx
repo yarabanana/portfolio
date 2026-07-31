@@ -1,10 +1,17 @@
 // src/app/photo/page.tsx
 import Link from "next/link";
 import { Metadata } from "next";
+import Gallery from "@/components/ui/Gallery";
 
 export const metadata: Metadata = {
-  title: "Репортажна фотографія | Ярослав Ісаєв",
+  title: "Репортажна фотографія",
 };
+
+// Твоя база фотографій
+const photoProjects = [
+  { id: 1, src: "https://images.unsplash.com/photo-1551218808-94e220e084d2?q=80&w=1000", alt: "Фото 1" },
+  { id: 2, src: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1000", alt: "Фото 2" },
+];
 
 export default function PhotoPortfolioPage() {
   return (
@@ -21,20 +28,13 @@ export default function PhotoPortfolioPage() {
         {/* Заголовок */}
         <h1 className="text-h2 font-bold text-ink mb-12">Репортажна фотографія</h1>
 
-        {/* Тут згодом буде сітка з твоїми репортажними фото */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="aspect-[4/3] bg-cloud rounded-card border border-dashed border-line flex items-center justify-center text-mist text-sm">
-            Місце для фото 1
-          </div>
-          <div className="aspect-[4/3] bg-cloud rounded-card border border-dashed border-line flex items-center justify-center text-mist text-sm">
-            Місце для фото 2
-          </div>
-        </div>
+        {/* Викликаємо галерею. aspect-[4/3] зробить прев'ю прямокутними */}
+        <Gallery items={photoProjects} aspectClass="aspect-[4/3]" />
 
       </div>
 
       {/* Футер */}
-      <footer className="w-full py-6 mt-auto border-t border-line">
+      <footer className="w-full py-6 mt-auto border-t border-line bg-white">
         <div className="text-center text-xs text-gray-400">
           <Link href="/" className="hover:text-gray-600 transition-colors inline-block">
             Ярослав Ісаєв - комунікаційник
