@@ -38,7 +38,7 @@ export const about = {
 export const experience = [
   {
     id: "shchepkin",
-    period: { ua: "09.2023 - дотепер", en: "09.2023 - Present" },
+    period: { ua: "09.2023 - 10.2026", en: "09.2023 - 10.2026" },
     company: { ua: "НАЦІОНАЛЬНИЙ АКАДЕМІЧНИЙ ТЕАТР ІМ. М. ЩЕПКІНА", en: "SHCHEPKIN NATIONAL ACADEMIC THEATER" },
     role: { ua: "Начальник відділу інформаційно-презентаційного", en: "Head of Information & Presentation Department" },
     achievements: {
