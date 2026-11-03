@@ -37,13 +37,24 @@ export const about = {
 
 export const experience = [
   {
+    id: "mms",
+    period: { ua: "10.2026 - дотепер", en: "10.2026 - Present" },
+    company: { ua: "МІНІСТЕРСТВО МОЛОДІ ТА СПОРТУ УКРАЇНИ", en: "MINISTRY OF YOUTH AND SPORTS OF UKRAINE" },
+    role: { ua: "Комунікаційний менеджер", en: "Communications Manager" },
+    achievements: {
+      ua: [
+        { text: "Досвід набувається. Результати фіксуються." },
+      ]
+    }
+  },
+  {
     id: "shchepkin",
     period: { ua: "09.2023 - 10.2026", en: "09.2023 - 10.2026" },
     company: { ua: "НАЦІОНАЛЬНИЙ АКАДЕМІЧНИЙ ТЕАТР ІМ. М. ЩЕПКІНА", en: "SHCHEPKIN NATIONAL ACADEMIC THEATER" },
-    role: { ua: "Начальник відділу інформаційно-презентаційного", en: "Head of Information & Presentation Department" },
+    role: { ua: "Начальник відділу інформаційно-презентаційного", en: "Headgit add . of Information & Presentation Department" },
     achievements: {
       ua: [
-        { text: "Управління командою: Координую 6 фахівців (SMM, дизайн, фото/відео). Створюю та координую підготовку комунікаційних матеріалів: контент для соцмереж, афіші, презентації, інфографіку та звітні матеріали." },
+        { text: "Управління командою: Координував 6 фахівців (SMM, дизайн, фото/відео). Створював та координував підготовку комунікаційних матеріалів: контент для соцмереж, афіші, презентації, інфографіку та звітні матеріали." },
         { 
           text: "Art Direction & Branding: Розробив та впровадив єдиний візуальний стиль театру для офіційних комунікаційних каналів Instagram, Facebook.", 
           link: { url: "https://www.instagram.com/shchepkintheatre/", label: "Перейти в Instagram театру ↗" } 
@@ -52,7 +63,7 @@ export const experience = [
           text: "Грант-менеджмент: Реалізував 2 інклюзивні проєкти від УКФ для людей із порушеннями зору та слуху. Забезпечив медіапланування, роботу з підрядниками, закупівлі та підготовку фінальної звітності.",
           embed: { type: "instagram-reel", url: "https://www.instagram.com/reel/DOY_dfuCIII/" }
         },
-        { text: "Media Relations: Розвиваю партнерські комунікації з інфлюенсерами та інституційними партнерами." }
+        { text: "Media Relations: Розвивав партнерські комунікації з інфлюенсерами та інституційними партнерами." }
       ]
     }
   },
