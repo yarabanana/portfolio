@@ -6,10 +6,12 @@ import Education from "@/components/sections/Education";
 import Skills from "@/components/sections/Skills";
 import Contacts from "@/components/sections/Contacts";
 import Footer from "@/components/layout/Footer"; // Додано імпорт
+import JobModal from "@/components/ui/JobModal"; // Вспливаюче вікно додаєм
 
 export default function Home() {
   return (
     <main>
+      <JobModal />
       <Header />
       <Hero />
       <About />
