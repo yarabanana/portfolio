@@ -4,58 +4,63 @@
 import { useState, useEffect } from "react";
 
 export default function JobModal() {
-  // Створюємо "пам'ять" для вікна. Спочатку воно закрите (false), щоб не блимати миттєво при завантаженні.
   const [isOpen, setIsOpen] = useState(false);
 
-  // Цей код спрацьовує один раз при завантаженні сторінки.
-  // Він відкриває вікно через 500 мілісекунд для красивого плавного старту.
   useEffect(() => {
     const timer = setTimeout(() => setIsOpen(true), 500);
-    return () => clearTimeout(timer); // Очищаємо таймер, якщо користувач піде зі сторінки раніше
+    return () => clearTimeout(timer);
   }, []);
 
-  // Якщо вікно має бути закрите — ми просто нічого не малюємо (return null).
   if (!isOpen) return null;
 
   return (
-    // Головний контейнер на весь екран, поверх усього іншого (z-50)
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      
+      {/* Спеціальний стиль для анімації БАГАТОКОЛІРНОГО градієнта */}
+      <style>{`
+        @keyframes led-gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .animate-led {
+          /* Додали плавний перехід із теплими кольорами (оранжевий #f97316 та жовтий #facc15) */
+          background: linear-gradient(90deg, #22d3ee, #a855f7, #ec4899, #f97316, #facc15, #22d3ee);
+          background-size: 300% 300%;
+          animation: led-gradient 4s ease infinite;
+        }
+      `}</style>
 
       {/* Темний напівпрозорий фон (підкладка) */}
       <div
-        className="absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity"
-        onClick={() => setIsOpen(false)} // Закриваємо вікно, якщо клікнути повз нього на темний фон
+        className="absolute inset-0 bg-gray-800/40 backdrop-blur-sm transition-opacity"
+        onClick={() => setIsOpen(false)}
       ></div>
 
-      {/* Сама картка з ефектом глосморфізму (матового скла) */}
-      <div className="relative w-full max-w-md bg-white/70 backdrop-blur-md border border-white/50 shadow-2xl rounded-3xl p-8 text-center">
+      {/* ОБГОРТКА ДЛЯ LED-ЕФЕКТУ: використовує клас animate-led і має теплу оранжеву тінь */}
+      <div className="relative w-full max-w-md p-[2px] rounded-3xl animate-led shadow-[0_0_20px_rgba(249,115,22,0.3)]">
+        
+        {/* САМЕ ВІКНО: чистий білий глосморфізм, ЖОДНИХ градієнтів всередині */}
+        <div className="relative bg-white/85 backdrop-blur-xl rounded-[calc(1.5rem-2px)] p-8 text-center w-full h-full">
 
-        {/* Лаконічний малопомітний хрестик у правому верхньому куті */}
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-5 right-5 text-gray-400 hover:text-ink transition-colors"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
+          {/* Текстовий контент */}
+          <div className="mb-2 mt-4">
+            <h3 className="text-2xl font-bold text-ink mb-4">Я вже знайшов роботу 🥳️️️️️️</h3>
+            <p className="text-graphite text-sm leading-relaxed mb-6">
+              Дякую за увагу до мого профілю! <br />
+              Наразі я не шукаю нових можливостей. <br />
+              Але якщо у вас є супер-мєга пропозиція, від якої просто неможливо втриматися — звісно, ви можете мені написати! 😉
+            </p>
+          </div>
 
-        {/* Контент вікна */}
-        <div className="mb-2 mt-4">
-          <h3 className="text-2xl font-bold text-ink mb-4">Я вже знайшов роботу 💼</h3>
-          <p className="text-graphite text-sm leading-relaxed mb-6">
-            Дякую всім за увагу до мого профілю! Наразі я не шукаю нових можливостей, тому що працюю. Але якщо у вас є супер-мега пропозиція, від якої просто неможливо втриматися — звісно, ви можете мені написати! 😉
-          </p>
+          {/* Кнопка "Зрозуміло" */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="px-6 py-2.5 bg-ink/10 text-ink text-sm font-medium rounded-button hover:bg-ink/20 transition-colors"
+          >
+            Зрозуміло
+          </button>
         </div>
-
-        {/* Додаткова кнопка-закривашка (щоб користувачу було інтуїтивно зрозуміло, куди тиснути) */}
-        <button
-          onClick={() => setIsOpen(false)}
-          className="px-6 py-2.5 bg-ink/10 text-ink text-sm font-medium rounded-button hover:bg-ink/20 transition-colors"
-        >
-          Зрозуміло
-        </button>
-
       </div>
     </div>
   );
